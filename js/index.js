@@ -3,7 +3,9 @@ var app = new Vue({
     data: {
         message: 'Hello Vue!',
         msg: 'Hello Vue!',
-        rawHtml:'<span style="color:red">This should be red</span>'
+        rawHtml:'<span style="color:red">This should be red</span>',
+        url:'https://www.baidu.com',
+        attributeName:'href'
     }
 })
 
@@ -46,6 +48,14 @@ var app5 = new Vue(
                 this.message = this.message.split('').reverse().join('');
             }
         }
+        /*计算属性 computed， 缓存方法 methods
+        computed: {
+            // 计算属性的 getter
+            reversedMessage: function () {
+                // `this` 指向 vm 实例
+                return this.message.split('').reverse().join('')
+            }
+        }*/
     }
 )
 
