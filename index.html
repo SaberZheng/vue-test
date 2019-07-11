@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello vue</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<!--Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进DOM的系统-->
+<div id="app">
+    {{ message }}
+</div>
+
+<!-- v-bind特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。它们会在渲染的DOM上应用特殊的响应式行为。
+该指令的意思是：“将这个元素节点的 title 特性和 Vue 实例的 message 属性保持一致”。-->
+<div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+
+<!--不仅可以把数据绑定到 DOM 文本或特性，还可以绑定到 DOM 结构。-->
+<div id="app-3">
+    <span v-if="seen">
+        现在你看到我了
+    </span>
+</div>
+
+<!--v-for 指令可以绑定数组的数据来渲染一个项目列表-->
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ol>
+</div>
+
+<!--v-on 指令添加一个事件监听器，通过它调用在 Vue 实例中定义的方法-->
+<div id="app-5">
+    {{message}}
+    <button v-on:click="reverseMessage">反转消息</button>
+</div>
+
+<!--v-model 指令，实现表单输入和应用状态之间的双向绑定-->
+<div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
