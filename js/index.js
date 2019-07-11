@@ -1,7 +1,9 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Vue!'
+        message: 'Hello Vue!',
+        msg: 'Hello Vue!',
+        rawHtml:'<span style="color:red">This should be red</span>'
     }
 })
 
@@ -54,4 +56,19 @@ var app6 = new Vue({
     }
 })
 
+Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+    el: "#app-7",
+    data: {
+        groceryList: [
+            {id: 0, text: '学习Java 8'},
+            {id: 1,text: '学习JOOQ'},
+            {id: 2,text: '学习Vue'}
+        ]
+    }
+})
 

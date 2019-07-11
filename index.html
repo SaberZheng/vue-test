@@ -11,6 +11,10 @@
 <!--Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进DOM的系统-->
 <div id="app">
     {{ message }}
+    <!--通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。-->
+    <span v-once>这个将不会改变: {{ msg }}</span>
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 </div>
 
 <!-- v-bind特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。它们会在渲染的DOM上应用特殊的响应式行为。
@@ -47,6 +51,13 @@
 <div id="app-6">
     <p>{{message}}</p>
     <input v-model="message">
+</div>
+
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+        </todo-item>
+    </ol>
 </div>
 
 <script src="js/index.js"></script>
