@@ -17,6 +17,8 @@
     <!--使用 v-html 指令输出真正的 HTML-->
     <p>Using v-html directive: <span v-html="rawHtml"></span></p>
     <a v-bind:href="url">百度一下</a>
+    <a v-bind:[attribute]="url">百度一下</a>
+    <h1 v-show="ok">Hello!</h1>
 </div>
 
 <!-- v-bind特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。它们会在渲染的DOM上应用特殊的响应式行为。
@@ -31,6 +33,9 @@
 <div id="app-3">
     <span v-if="seen">
         现在你看到我了
+    </span>
+    <span v-else>
+        现在你看不到我了
     </span>
 </div>
 
@@ -69,6 +74,9 @@
     </p>
     <p>{{ answer }}</p>
 </div>
+
+<div id="app-8" v-bind:style="styleObject">class与style绑定</div>
+<div id="app-9" v-bind:class="{ active: isActive, 'text-danger': hasError }">绑定HTML Class</div>
 
 <script src="js/index.js"></script>
 

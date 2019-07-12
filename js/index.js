@@ -3,9 +3,10 @@ var app = new Vue({
     data: {
         message: 'Hello Vue!',
         msg: 'Hello Vue!',
-        rawHtml:'<span style="color:red">This should be red</span>',
-        url:'https://www.baidu.com',
-        attributeName:'href'
+        rawHtml: '<span style="color:red">This should be red</span>',
+        url: 'https://www.baidu.com',
+        attribute: 'href',
+        ok:false
     }
 })
 
@@ -72,13 +73,30 @@ Vue.component('todo-item', {
 })
 
 var app7 = new Vue({
-    el: "#app-7",
+    el: '#app-7',
     data: {
         groceryList: [
             {id: 0, text: '学习Java 8'},
-            {id: 1,text: '学习JOOQ'},
-            {id: 2,text: '学习Vue'}
+            {id: 1, text: '学习JOOQ'},
+            {id: 2, text: '学习Vue'}
         ]
+    }
+})
+var app8 = new Vue({
+    el: '#app-8',
+    data: {
+        styleObject: {
+            color: 'red',
+            fontSize: '13px'
+        }
+    }
+})
+
+var app9 = new Vue({
+    el: '#app-9',
+    data: {
+        isActive: true,
+        hasError: true
     }
 })
 
